@@ -1,103 +1,127 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useState, useMemo } from "react";
+import { ProductToolbar } from "@/components/products/product-toolbar";
+import { ProductGrid } from "@/components/products/product-grid";
+import type { FilterState } from "@/types/product";
+import { products } from "@/lib/data/data";
+import Breadcrumb from "@/components/layout/main/breadcrum";
+import { SidebarFilters } from "@/components/filters/siderbar";
+
+export default function HomePage() {
+  const [filters, setFilters] = useState<FilterState>({
+    priceMin: 125,
+    priceMax: 843,
+    manufacturers: [],
+    heights: [],
+    hasDisplay: null,
+    colors: [],
+    freezerTypes: [],
+    volumes: [],
+  });
+
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  const [sortBy, setSortBy] = useState("popular");
+
+  const filteredProducts = useMemo(() => {
+    const filtered = products.filter((product) => {
+      // Price filter
+      if (
+        product.price < filters.priceMin ||
+        product.price > filters.priceMax
+      ) {
+        return false;
+      }
+
+      // Manufacturer filter
+      if (
+        filters.manufacturers.length > 0 &&
+        !filters.manufacturers.includes(product.manufacturer)
+      ) {
+        return false;
+      }
+
+      // Height filter
+      if (filters.heights.length > 0) {
+        const hasMatchingHeight = filters.heights.some((height) => {
+          if (height === "100") return product.height <= 100;
+          if (height === "110") return product.height <= 110;
+          if (height === "120-170")
+            return product.height >= 120 && product.height <= 170;
+          if (height === "190") return product.height >= 190;
+          return false;
+        });
+        if (!hasMatchingHeight) return false;
+      }
+
+      // Display filter
+      if (
+        filters.hasDisplay !== null &&
+        product.hasDisplay !== filters.hasDisplay
+      ) {
+        return false;
+      }
+
+      // Color filter
+      if (
+        filters.colors.length > 0 &&
+        !filters.colors.includes(product.color)
+      ) {
+        return false;
+      }
+
+      // Freezer type filter
+      if (
+        filters.freezerTypes.length > 0 &&
+        !filters.freezerTypes.includes(product.freezerType)
+      ) {
+        return false;
+      }
+
+      return true;
+    });
+
+    // Sort products
+    switch (sortBy) {
+      case "price-asc":
+        filtered.sort((a, b) => a.price - b.price);
+        break;
+      case "price-desc":
+        filtered.sort((a, b) => b.price - a.price);
+        break;
+      case "name":
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      default:
+        // Keep original order for popularity
+        break;
+    }
+
+    return filtered;
+  }, [filters, sortBy]);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className=" bg-white">
+      <Breadcrumb />
+      <div className=" mx-auto px-20 pt-2 py-6">
+        <div className="flex gap-6">
+          <SidebarFilters onFiltersChange={setFilters} />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+          <div className="flex-1">
+            <ProductToolbar
+              totalProducts={filteredProducts.length}
+              viewMode={viewMode}
+              onViewModeChange={setViewMode}
+              sortBy={sortBy}
+              onSortChange={setSortBy}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+
+            <div className="mt-6">
+              <ProductGrid products={filteredProducts} />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }
