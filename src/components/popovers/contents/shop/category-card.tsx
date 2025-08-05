@@ -4,19 +4,22 @@ import React from "react";
 
 interface categoryItemProps {
   name: string;
+  image: string;
 }
 
-export default function CategoryItemCard({ name }: categoryItemProps) {
+export default function CategoryItemCard({ name, image }: categoryItemProps) {
   return (
     <Link key={name} href="/">
-      <div className="flex items-center gap-4">
-        <Image
-          src="/assets/images/Freezer.png"
-          alt={`${name}`}
-          width={100}
-          height={100}
-          className=""
-        />
+      <div className="flex flex-col items-center tracking-wider font-semibold text-gray-600 gap-4">
+        <div className="overflow-hidden">
+          <Image
+            src={image}
+            alt={`${name} image`}
+            width={120}
+            height={120}
+            className="transition-transform transform hover:scale-110"
+          />
+        </div>
         <p>{name}</p>
       </div>
     </Link>

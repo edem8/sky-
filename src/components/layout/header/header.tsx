@@ -13,15 +13,15 @@ import ContactAndHelp from "@/components/popovers/Triggers/contact";
 
 export function Header() {
   return (
-    <header className="bg-white w-full sticky top-0 z-50 ">
-      <div className="border-b">
+    <header className="bg-white w-full sticky top-0 z-50  ">
+      <div className="border-b relative">
         {/* Top navigation */}
-        <div className="flex items-center justify-between py-8 text-sm text-gray-600 bg-[#088F8F] px-4">
+        <div className="flex items-center justify-between py-8 text-sm text-gray-600 bg-[#088F8F] px-4 ">
           <Downlaod />
           <nav className="flex items-center space-x-8 mx-auto divide-x-2 ">
             <Link
               href="#"
-              className="text-white font-semibold hover:text-gray-300 pr-6"
+              className="text-white font-semibold hover:text-gray-300 pr-6 "
             >
               <Shop />
             </Link>
@@ -52,7 +52,7 @@ export function Header() {
         </div>
 
         {/* Main header */}
-        <div className="flex items-center justify-around py-7">
+        <div className="flex items-center justify-center space-x-10 py-7">
           <div className="flex items-center  ">
             {/* <Brand /> */}
             <Finder />
