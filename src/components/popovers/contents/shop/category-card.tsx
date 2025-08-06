@@ -5,11 +5,16 @@ import React from "react";
 interface categoryItemProps {
   name: string;
   image: string;
+  key: number;
 }
 
-export default function CategoryItemCard({ name, image }: categoryItemProps) {
+export default function CategoryItemCard({
+  key,
+  name,
+  image,
+}: categoryItemProps) {
   return (
-    <Link key={name} href="/">
+    <Link key={key} href="/">
       <div className="flex flex-col items-center tracking-wider font-semibold text-gray-600 gap-4">
         <div className="overflow-hidden">
           <Image

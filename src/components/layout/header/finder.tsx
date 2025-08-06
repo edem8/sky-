@@ -14,7 +14,7 @@ export default function Finder() {
   return (
     <div className="flex items-center space-x-2 ">
       <Select defaultValue="catalog">
-        <SelectTrigger className="w-50 rounded-none py-8 cursor-pointer bg-[#F8F8F8]">
+        <SelectTrigger className="w-50 rounded-none py-8 cursor-pointer bg-gray-50">
           <SelectValue />
         </SelectTrigger>
         <SelectContent>

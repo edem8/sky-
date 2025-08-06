@@ -99,7 +99,6 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-4">
               <div className="flex-1">
-                <Mail className="w-20 h-20 text-[#088F8F]" />
                 <p className="text-gray-600 mb-2">
                   Subscribe to newsletter to receive
                 </p>
@@ -142,7 +141,7 @@ export default function Footer() {
         {/* Social Media */}
         <div className="flex items-center justify-between  border-gray-200 pt-6">
           <div className="flex items-center gap-4">
-            <span className="text-gray-600">We're on social media</span>
+            <span className="text-gray-600">We&apos;re on social media</span>
             <div className="flex gap-3">
               <Link
                 href="#"
@@ -169,7 +168,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="text-center text-gray-500 text-sm mt-6 pt-6 border-t border-gray-200">
           <p>
-            (c) 2013 - 2020 Home appliances and electronics online store - SKY
+            (c) 2013 - 2020 Home appliances and electronics online store - Sky
           </p>
         </div>
       </div>

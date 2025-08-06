@@ -41,7 +41,7 @@ export default function ShopCategories() {
       {/* Category cards container */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-20">
         {data.map((item, index) => (
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0" key={item.name}>
             <CategoryItemCard key={index} name={item.name} image={item.image} />
           </div>
         ))}
@@ -57,7 +57,11 @@ export default function ShopCategories() {
         </p>
         <ul className="mt-4 space-y-3 flex flex-col ">
           {data.map((item, index) => (
-            <Link href="/" key={index} className="hover:underline text-gray-500">
+            <Link
+              href="/"
+              key={item.name + index}
+              className="hover:underline text-gray-500"
+            >
               {item.guide}
             </Link>
           ))}

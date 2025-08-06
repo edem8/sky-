@@ -2,10 +2,8 @@ import Link from "next/link";
 import User from "../../popovers/Triggers/user";
 import Country from "../../popovers/Triggers/country";
 import Downlaod from "../../popovers/Triggers/download";
-import Brand from "./brand";
 import Finder from "./finder";
 import Icons from "./icons";
-import Categories from "./categories";
 import Shop from "@/components/popovers/Triggers/shop";
 import Brands from "@/components/popovers/Triggers/brands";
 import ShippingAndPayment from "@/components/popovers/Triggers/shipping-payment";
@@ -54,16 +52,10 @@ export function Header() {
         {/* Main header */}
         <div className="flex items-center justify-center space-x-12 py-7">
           <div className="flex items-center  ">
-            {/* <Brand /> */}
             <Finder />
           </div>
           <Icons />
         </div>
-
-        {/* categories */}
-        {/* <div className="mx-auto text-xs border-t py-8  bg-[#F8F8F8]">
-          <Categories />
-        </div> */}
       </div>
     </header>
   );

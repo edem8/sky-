@@ -28,7 +28,6 @@ export function PriceFilter({ min, max, onPriceChange }: PriceFilterProps) {
 
   return (
     <div className="space-y-3">
-      <h3 className="font-medium">Price</h3>
       <div className="flex items-center space-x-2">
         <div className="flex-1">
           <Input

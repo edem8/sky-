@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { PriceFilter } from "./price-filter";
 import type { FilterState } from "@/types/product";
 import { manufacturers, colors, freezerTypes } from "@/lib/data/data";
 import CheckboxFilter from "./check-box-filter";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface SidebarFiltersProps {
   onFiltersChange: (filters: FilterState) => void;
@@ -23,10 +23,29 @@ export function SidebarFilters({ onFiltersChange }: SidebarFiltersProps) {
     volumes: [],
   });
 
+  const [expandedFilters, setExpandedFilters] = useState<{
+    [key: string]: boolean;
+  }>({
+    manufacturers: true,
+    heights: true,
+    hasDisplay: true,
+    colors: true,
+    freezerTypes: true,
+    volumes: true,
+    price: true, // Added price filter state
+  });
+
   const updateFilters = (newFilters: Partial<FilterState>) => {
     const updated = { ...filters, ...newFilters };
     setFilters(updated);
     onFiltersChange(updated);
+  };
+
+  const toggleFilter = (filter: string) => {
+    setExpandedFilters((prevState) => ({
+      ...prevState,
+      [filter]: !prevState[filter],
+    }));
   };
 
   const heightOptions = [
@@ -43,89 +62,194 @@ export function SidebarFilters({ onFiltersChange }: SidebarFiltersProps) {
 
   return (
     <div className="w-90 bg-gray-50 p-4 space-y-6">
-      <PriceFilter
-        min={1000}
-        max={5000}
-        onPriceChange={(min, max) =>
-          updateFilters({ priceMin: min, priceMax: max })
-        }
-      />
-
-      <CheckboxFilter
-        title="Manufacturer"
-        options={manufacturers.map((m) => ({ value: m, label: m }))}
-        selectedValues={filters.manufacturers}
-        onSelectionChange={(values) => updateFilters({ manufacturers: values })}
-      />
-
-      <CheckboxFilter
-        title="Height"
-        options={heightOptions}
-        selectedValues={filters.heights}
-        onSelectionChange={(values) => updateFilters({ heights: values })}
-      />
-
-      <div className="text-center">
-        <Button variant="link" className="text-blue-600 text-sm">
-          Show 7 more options
-        </Button>
+      {/* Price Filter */}
+      <div>
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleFilter("price")}
+        >
+          <span className="text-sm font-semibold text-gray-700">Price</span>
+          {expandedFilters.price ? (
+            <ChevronUp className="text-gray-700 w-4 h-4" />
+          ) : (
+            <ChevronDown className="text-gray-700 w-4 h-4" />
+          )}
+        </div>
+        {expandedFilters.price && (
+          <PriceFilter
+            min={1000}
+            max={5000}
+            onPriceChange={(min, max) =>
+              updateFilters({ priceMin: min, priceMax: max })
+            }
+          />
+        )}
       </div>
 
-      <CheckboxFilter
-        title="Display"
-        options={displayOptions}
-        selectedValues={
-          filters.hasDisplay === true
-            ? ["yes"]
-            : filters.hasDisplay === false
-            ? ["no"]
-            : []
-        }
-        onSelectionChange={(values) => {
-          const hasDisplay = values.includes("yes")
-            ? true
-            : values.includes("no")
-            ? false
-            : null;
-          updateFilters({ hasDisplay });
-        }}
-      />
+      {/* Manufacturer Filter */}
+      <div>
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleFilter("manufacturers")}
+        >
+          <span className="text-sm font-semibold text-gray-700">
+            Manufacturer
+          </span>
+          {expandedFilters.manufacturers ? (
+            <ChevronUp className="text-gray-700 w-4 h-4" />
+          ) : (
+            <ChevronDown className="text-gray-700 w-4 h-4" />
+          )}
+        </div>
+        {expandedFilters.manufacturers && (
+          <CheckboxFilter
+            title=""
+            options={manufacturers.map((m) => ({ value: m, label: m }))}
+            selectedValues={filters.manufacturers}
+            onSelectionChange={(values) =>
+              updateFilters({ manufacturers: values })
+            }
+          />
+        )}
+      </div>
 
-      <CheckboxFilter
-        title="Color"
-        options={colors.map((c) => ({ value: c, label: c }))}
-        selectedValues={filters.colors}
-        onSelectionChange={(values) => updateFilters({ colors: values })}
-      />
+      {/* Height Filter */}
+      <div>
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleFilter("heights")}
+        >
+          <span className="text-sm font-semibold text-gray-700">Height</span>
+          {expandedFilters.heights ? (
+            <ChevronUp className="text-gray-700 w-4 h-4" />
+          ) : (
+            <ChevronDown className="text-gray-700 w-4 h-4" />
+          )}
+        </div>
+        {expandedFilters.heights && (
+          <CheckboxFilter
+            title=""
+            options={heightOptions}
+            selectedValues={filters.heights}
+            onSelectionChange={(values) => updateFilters({ heights: values })}
+          />
+        )}
+      </div>
 
-      <CheckboxFilter
-        title="Freezer Type"
-        options={freezerTypes.map((f) => ({ value: f, label: f }))}
-        selectedValues={filters.freezerTypes}
-        onSelectionChange={(values) => updateFilters({ freezerTypes: values })}
-      />
+      {/* Display Filter */}
+      <div>
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleFilter("hasDisplay")}
+        >
+          <span className="text-sm font-semibold text-gray-700">Display</span>
+          {expandedFilters.hasDisplay ? (
+            <ChevronUp className="text-gray-700 w-4 h-4" />
+          ) : (
+            <ChevronDown className="text-gray-700 w-4 h-4" />
+          )}
+        </div>
+        {expandedFilters.hasDisplay && (
+          <CheckboxFilter
+            title=""
+            options={displayOptions}
+            selectedValues={
+              filters.hasDisplay === true
+                ? ["yes"]
+                : filters.hasDisplay === false
+                ? ["no"]
+                : []
+            }
+            onSelectionChange={(values) => {
+              const hasDisplay = values.includes("yes")
+                ? true
+                : values.includes("no")
+                ? false
+                : null;
+              updateFilters({ hasDisplay });
+            }}
+          />
+        )}
+      </div>
 
-      <CheckboxFilter
-        title="Refrigerator Type"
-        options={[
-          { value: "standard", label: "Standard" },
-          { value: "mini", label: "Mini" },
-          { value: "side-by-side", label: "Side-by-side" },
-        ]}
-        selectedValues={[]}
-        onSelectionChange={() => {}}
-      />
+      {/* Color Filter */}
+      <div>
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleFilter("colors")}
+        >
+          <span className="text-sm font-semibold text-gray-700">Color</span>
+          {expandedFilters.colors ? (
+            <ChevronUp className="text-gray-700 w-4 h-4" />
+          ) : (
+            <ChevronDown className="text-gray-700 w-4 h-4" />
+          )}
+        </div>
+        {expandedFilters.colors && (
+          <CheckboxFilter
+            title=""
+            options={colors.map((c) => ({ value: c, label: c }))}
+            selectedValues={filters.colors}
+            onSelectionChange={(values) => updateFilters({ colors: values })}
+          />
+        )}
+      </div>
 
-      <CheckboxFilter
-        title="Refrigerator Volume"
-        options={[
-          { value: "200-300", label: "7-11 cu ft" },
-          { value: "300-400", label: "11-14 cu ft" },
-          { value: "400+", label: "14+ cu ft" },
-        ]}
-        selectedValues={filters.volumes}
-        onSelectionChange={(values) => updateFilters({ volumes: values })}
-      />
+      {/* Freezer Type Filter */}
+      <div>
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleFilter("freezerTypes")}
+        >
+          <span className="text-sm font-semibold text-gray-700">
+            Freezer Type
+          </span>
+          {expandedFilters.freezerTypes ? (
+            <ChevronUp className="text-gray-700 w-4 h-4" />
+          ) : (
+            <ChevronDown className="text-gray-700 w-4 h-4" />
+          )}
+        </div>
+        {expandedFilters.freezerTypes && (
+          <CheckboxFilter
+            title=""
+            options={freezerTypes.map((f) => ({ value: f, label: f }))}
+            selectedValues={filters.freezerTypes}
+            onSelectionChange={(values) =>
+              updateFilters({ freezerTypes: values })
+            }
+          />
+        )}
+      </div>
+
+      {/* Volume Filter */}
+      <div>
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleFilter("volumes")}
+        >
+          <span className="text-sm font-semibold text-gray-700">
+            Refrigerator Volume
+          </span>
+          {expandedFilters.volumes ? (
+            <ChevronUp className="text-gray-700 w-4 h-4" />
+          ) : (
+            <ChevronDown className="text-gray-700 w-4 h-4" />
+          )}
+        </div>
+        {expandedFilters.volumes && (
+          <CheckboxFilter
+            title=" "
+            options={[
+              { value: "200-300", label: "7-11 cu ft" },
+              { value: "300-400", label: "11-14 cu ft" },
+              { value: "400+", label: "14+ cu ft" },
+            ]}
+            selectedValues={filters.volumes}
+            onSelectionChange={(values) => updateFilters({ volumes: values })}
+          />
+        )}
+      </div>
     </div>
   );
 }
