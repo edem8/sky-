@@ -14,7 +14,8 @@ export default function Country() {
         <span className="text-lg">🇬🇭</span>
         <div className="flex items-center">
           <span className="text-xs font-semibold">GHA</span>
-          <ChevronDown className="text-xs " strokeWidth={2.5} />
+          {/* Rotate the triangle and fill it */}
+          <ChevronDown className="w-4 h-4 text-white ml-1" />
         </div>
       </PopoverTrigger>
       <PopoverContent className="mt-6 "></PopoverContent>
