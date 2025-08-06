@@ -61,7 +61,7 @@ export function SidebarFilters({ onFiltersChange }: SidebarFiltersProps) {
   ];
 
   return (
-    <div className="w-90 bg-gray-50 p-4 space-y-6">
+    <div className="w-60 xl:w-90 bg-gray-50 p-4  space-y-6">
       {/* Price Filter */}
       <div>
         <div

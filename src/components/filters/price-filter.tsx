@@ -34,7 +34,7 @@ export function PriceFilter({ min, max, onPriceChange }: PriceFilterProps) {
             type="number"
             value={minPrice}
             onChange={(e) => handleMinChange(e.target.value)}
-            className="text-sm"
+            className="text-sm mt-2"
           />
           <Label className="text-xs pl-2 py-1 text-gray-500">GHS</Label>
         </div>
@@ -44,7 +44,7 @@ export function PriceFilter({ min, max, onPriceChange }: PriceFilterProps) {
             type="number"
             value={maxPrice}
             onChange={(e) => handleMaxChange(e.target.value)}
-            className="text-sm"
+            className="text-sm mt-2"
           />
           <Label className="text-xs pl-2 py-1 text-gray-500">GHS</Label>
         </div>

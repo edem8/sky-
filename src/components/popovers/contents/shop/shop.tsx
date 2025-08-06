@@ -37,22 +37,22 @@ const data = [
 
 export default function ShopCategories() {
   return (
-    <div className="flex items-start justify-center p-8 border-b">
+    <div className="flex items-start justify-center px-4 py-8 xl:p-8 border-b">
       {/* Category cards container */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-20">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-12 xl:gap-20">
         {data.map((item, index) => (
           <div className="flex-shrink-0" key={item.name}>
-            <CategoryItemCard key={index} name={item.name} image={item.image} />
+            <CategoryItemCard name={item.name} image={item.image} />
           </div>
         ))}
       </div>
 
       {/* Vertical Divider */}
-      <div className="w-px h-120 bg-gray-300 mx-10" />
+      <div className="w-px h-120 bg-gray-300 mx-6 xl:mx-10" />
 
       {/* Side content (e.g., guide or promo links) */}
-      <div className="text-sm text-gray-800 px-10  ">
-        <p className="font-semibold tracking-wider text-sm pb-2 border-b">
+      <div className="text-sm text-gray-800 px-2 xl:px-10  ">
+        <p className="font-semibold tracking-wider text-xs xl:text-sm pb-2 border-b">
           Purchasing Guide
         </p>
         <ul className="mt-4 space-y-3 flex flex-col ">

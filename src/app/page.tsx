@@ -104,8 +104,8 @@ export default function HomePage() {
   return (
     <div className=" bg-white">
       <Breadcrumb />
-      <div className=" mx-auto px-20 pt-2 py-6">
-        <div className="flex gap-6">
+      <div className=" mx-auto px-8 xl:px-20 pt-2 py-6">
+        <div className="flex gap-3 xl:gap-6">
           <SidebarFilters onFiltersChange={setFilters} />
 
           <div className="flex-1">

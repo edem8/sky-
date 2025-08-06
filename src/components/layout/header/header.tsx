@@ -16,41 +16,41 @@ export function Header() {
         {/* Top navigation */}
         <div className="flex items-center justify-between py-8 text-sm text-gray-600 bg-[#088F8F] px-4 ">
           <Downlaod />
-          <nav className="flex items-center space-x-8 mx-auto divide-x-2 ">
+          <nav className="flex items-center text:xs xl:space-x-8 mx-auto divide-x-2 ">
             <Link
               href="#"
-              className="text-white font-semibold hover:text-gray-300 pr-6 "
+              className="text-white font-semibold hover:text-gray-300 px-4 xl:pr-6 "
             >
               <Shop />
             </Link>
             <Link
               href="#"
-              className="text-white font-semibold hover:text-gray-300 pr-6"
+              className="text-white font-semibold hover:text-gray-300 px-4 xl:pr-6"
             >
               <Brands />
             </Link>
             <Link
               href="#"
-              className="text-white font-semibold hover:text-gray-300 pr-6"
+              className="text-white font-semibold hover:text-gray-300 px-4 xl:pr-6"
             >
               <ShippingAndPayment />
             </Link>
 
             <Link
               href="#"
-              className="text-white font-semibold hover:text-gray-300 pr-6"
+              className="text-white font-semibold hover:text-gray-300 px-4 xl:pr-6"
             >
               <ContactAndHelp />
             </Link>
           </nav>
-          <div className="flex items--center gap-2">
+          <div className="flex items-center xl:gap-2">
             <Country />
             <User />
           </div>
         </div>
 
         {/* Main header */}
-        <div className="flex items-center justify-center space-x-12 py-7">
+        <div className="flex items-center justify-center space-x-8 xl:space-x-12 py-7">
           <div className="flex items-center  ">
             <Finder />
           </div>

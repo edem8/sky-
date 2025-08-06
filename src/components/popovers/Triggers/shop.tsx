@@ -12,7 +12,7 @@ export default function Shop() {
       <PopoverTrigger className="cursor-pointer">
         Shop & Category
       </PopoverTrigger>
-      <PopoverContent className="mt-40 py-8 rounded-none h-screen w-[99vw] max-w-none transition-all translate-x-2">
+      <PopoverContent className="mt-43 xl:mt-40 py-8 rounded-none h-screen w-[99vw] max-w-none transition-all translate-x-1 xl:translate-x-2">
         <ShopCategories />
       </PopoverContent>
     </Popover>

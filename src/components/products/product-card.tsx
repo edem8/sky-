@@ -39,7 +39,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
       <div className="space-y-2">
         <div className="font-medium text-sm px-4">
-          <p className="text-lg">{product.name}</p>
+          <p className="text-base xl:text-lg">{product.name}</p>
           <p className="font-semibold">{product.model}</p>
         </div>
 

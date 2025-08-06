@@ -17,7 +17,7 @@ export function CheckboxFilter({
   };
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-3 ">
       <h3 className="font-medium">{title}</h3>
       <div className="space-y-2">
         {options.map((option) => (
@@ -32,7 +32,7 @@ export function CheckboxFilter({
             />
             <Label
               htmlFor={option.value}
-              className="text-sm cursor-pointer flex-1"
+              className="xl:text-sm cursor-pointer flex-1 text-xs"
             >
               {option.label}
               {option.count && (

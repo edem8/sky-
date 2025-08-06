@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 py-20 mt-8 px-4 md:px-6">
+    <footer className="bg-gray-50 py-10 xl:py-20 mt-8 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8 mb-8">
           {/* About Store */}
           <div>
             <h3 className="font-semibold text-gray-800 mb-4">About Store</h3>
@@ -107,9 +107,9 @@ export default function Footer() {
                   <Input
                     type="email"
                     placeholder="Enter your email"
-                    className="flex-1 py-10 px-6 tracking-wider rounded-none"
+                    className="flex-1 py-8 xl:py-10 px-6 tracking-wider rounded-none"
                   />
-                  <Button className="bg-[#088F8F] hover:bg-g[#088F8F]  cursor-pointer py-10 rounded-none text-white px-6">
+                  <Button className="bg-[#088F8F] hover:bg-g[#088F8F]  cursor-pointer py-8 xl:py-10 rounded-none text-white px-6">
                     Subscribe
                   </Button>
                 </div>
@@ -136,31 +136,31 @@ export default function Footer() {
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Social Media */}
-        <div className="flex items-center justify-between  border-gray-200 pt-6">
-          <div className="flex items-center gap-4">
-            <span className="text-gray-600">We&apos;re on social media</span>
-            <div className="flex gap-3">
-              <Link
-                href="#"
-                className="w-8 h-8 bg-gray-200 rounded flex items-center justify-center hover:bg-[#088F8F] hover:text-white transition-colors"
-              >
-                <Facebook className="w-4 h-4" />
-              </Link>
-              <Link
-                href="#"
-                className="w-8 h-8 bg-gray-200 rounded flex items-center justify-center hover:bg-[#088F8F] hover:text-white transition-colors"
-              >
-                <Instagram className="w-4 h-4" />
-              </Link>
-              <Link
-                href="#"
-                className="w-8 h-8 bg-gray-200 rounded flex items-center justify-center hover:bg-[#088F8F] hover:text-white transition-colors"
-              >
-                <Mail className="w-4 h-4" />
-              </Link>
+          {/* Social Media */}
+          <div className="flex items-center justify-between  border-gray-200 ">
+            <div className="flex items-center gap-4">
+              <span className="text-gray-600">We&apos;re on social media</span>
+              <div className="flex gap-3">
+                <Link
+                  href="#"
+                  className="w-8 h-8 bg-gray-200 rounded flex items-center justify-center hover:bg-[#088F8F] hover:text-white transition-colors"
+                >
+                  <Facebook className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="#"
+                  className="w-8 h-8 bg-gray-200 rounded flex items-center justify-center hover:bg-[#088F8F] hover:text-white transition-colors"
+                >
+                  <Instagram className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="#"
+                  className="w-8 h-8 bg-gray-200 rounded flex items-center justify-center hover:bg-[#088F8F] hover:text-white transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

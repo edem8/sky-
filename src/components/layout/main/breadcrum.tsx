@@ -13,7 +13,7 @@ const breadcrumbItems = [
 
 export function Breadcrumb() {
   return (
-    <nav className=" border-muted/50 py-2">
+    <nav className=" border-muted/50 py-4 xl:py-2">
       <div className="container mx-auto px-4">
         <ol className="flex items-center space-x-2 text-sm text-gray-600">
           {breadcrumbItems.map((item, index) => (
