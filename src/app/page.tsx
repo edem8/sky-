@@ -7,6 +7,7 @@ import type { FilterState } from "@/types/product";
 import { products } from "@/lib/data/data";
 import Breadcrumb from "@/components/layout/main/breadcrum";
 import { SidebarFilters } from "@/components/filters/siderbar";
+import Paginator from "@/components/layout/main/pagination";
 
 export default function HomePage() {
   const [filters, setFilters] = useState<FilterState>({
@@ -116,8 +117,9 @@ export default function HomePage() {
               onSortChange={setSortBy}
             />
 
-            <div className="mt-6">
+            <div className="mt-6 ">
               <ProductGrid products={filteredProducts} />
+              <Paginator />
             </div>
           </div>
         </div>

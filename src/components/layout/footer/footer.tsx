@@ -1,5 +1,178 @@
-import React from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Facebook, Instagram, Mail, Headset } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
-  return <div className="">footer</div>;
+  return (
+    <footer className="bg-gray-50 py-20 mt-8 px-4 md:px-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          {/* About Store */}
+          <div>
+            <h3 className="font-semibold text-gray-800 mb-4">About Store</h3>
+            <ul className="space-y-2 text-gray-600">
+              <li>
+                <Link
+                  href="#"
+                  className="hover:text-[#088F8F]transition-colors"
+                >
+                  Catalog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="hover:text-[#088F8F]transition-colors"
+                >
+                  Promotions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-[#088F8F]hover:text-green-600 transition-colors"
+                >
+                  Daily Deals
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="hover:text-[#088F8F]transition-colors"
+                >
+                  Store and Contacts
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="hover:text-[#088F8F]transition-colors"
+                >
+                  Delivery and Payment
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* For Customer */}
+          <div>
+            <h3 className="font-semibold text-gray-800 mb-4">For Customer</h3>
+            <ul className="space-y-2 text-gray-600">
+              <li>
+                <Link
+                  href="#"
+                  className="hover:text-[#088F8F] transition-colors"
+                >
+                  Personal Account
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="hover:text-[#088F8F] transition-colors"
+                >
+                  Shopping Cart
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="hover:text-[#088F8F] transition-colors"
+                >
+                  Favorites
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-[#088F8F] hover:text-green-600 transition-colors"
+                >
+                  Comparison
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter Signup */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-4">
+              <div className="flex-1">
+                <Mail className="w-20 h-20 text-[#088F8F]" />
+                <p className="text-gray-600 mb-2">
+                  Subscribe to newsletter to receive
+                </p>
+
+                <div className="flex gap-2 items-center">
+                  <Input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-1 py-10 px-6 tracking-wider rounded-none"
+                  />
+                  <Button className="bg-[#088F8F] hover:bg-g[#088F8F]  cursor-pointer py-10 rounded-none text-white px-6">
+                    Subscribe
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Section */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center my-15 gap-6">
+          {/* Contact Info */}
+          <div className="flex items-center gap-4 text-gray-600">
+            <div className="flex items-center gap-2">
+              <Headset className="w-20 h-20 text-[#088F8F]" />
+              <div>
+                <p className="text-sm">
+                  Have questions? Call from 9:00 to 20:00
+                </p>
+                <div className="flex gap-2 text-lg font-semibold text-gray-800">
+                  <span>024-03-11-010</span>
+                  <span className="text-gray-400">or</span>
+                  <span>050-0-148-220</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Social Media */}
+        <div className="flex items-center justify-between  border-gray-200 pt-6">
+          <div className="flex items-center gap-4">
+            <span className="text-gray-600">We're on social media</span>
+            <div className="flex gap-3">
+              <Link
+                href="#"
+                className="w-8 h-8 bg-gray-200 rounded flex items-center justify-center hover:bg-[#088F8F] hover:text-white transition-colors"
+              >
+                <Facebook className="w-4 h-4" />
+              </Link>
+              <Link
+                href="#"
+                className="w-8 h-8 bg-gray-200 rounded flex items-center justify-center hover:bg-[#088F8F] hover:text-white transition-colors"
+              >
+                <Instagram className="w-4 h-4" />
+              </Link>
+              <Link
+                href="#"
+                className="w-8 h-8 bg-gray-200 rounded flex items-center justify-center hover:bg-[#088F8F] hover:text-white transition-colors"
+              >
+                <Mail className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="text-center text-gray-500 text-sm mt-6 pt-6 border-t border-gray-200">
+          <p>
+            (c) 2013 - 2020 Home appliances and electronics online store - SKY
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
 }

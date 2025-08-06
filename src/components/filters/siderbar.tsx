@@ -42,7 +42,7 @@ export function SidebarFilters({ onFiltersChange }: SidebarFiltersProps) {
   ];
 
   return (
-    <div className="w-90 bg-[#F8F8F8] p-4 space-y-6">
+    <div className="w-90 bg-gray-50 p-4 space-y-6">
       <PriceFilter
         min={1000}
         max={5000}

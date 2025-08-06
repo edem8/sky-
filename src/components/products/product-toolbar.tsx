@@ -26,7 +26,7 @@ export function ProductToolbar({
   onSortChange,
 }: ProductToolbarProps) {
   return (
-    <div className="flex items-center justify-around bg-[#F8F8F8] py-6 border-b">
+    <div className="flex items-center justify-around bg-gray-50 py-6 border-b">
       <div className="flex items-center space-x-4">
         <span className="text-lg font-bold">{totalProducts}</span>
         <span className="text-gray-600">products found</span>

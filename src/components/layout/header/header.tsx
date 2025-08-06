@@ -52,7 +52,7 @@ export function Header() {
         </div>
 
         {/* Main header */}
-        <div className="flex items-center justify-center space-x-10 py-7">
+        <div className="flex items-center justify-center space-x-12 py-7">
           <div className="flex items-center  ">
             {/* <Brand /> */}
             <Finder />

@@ -18,7 +18,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div
-      className="bg-white rounded-none border  hover:shadow-md transition-shadow text-gray-700 relative hover:scale-102 hover:border-[#088F8F]"
+      className="bg-white rounded-none border  cursor-pointer hover:shadow-md transition-shadow text-gray-700 relative hover:scale-102 hover:border-[#088F8F]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

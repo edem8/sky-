@@ -57,7 +57,7 @@ export default function ShopCategories() {
         </p>
         <ul className="mt-4 space-y-3 flex flex-col ">
           {data.map((item, index) => (
-            <Link href="/" key={index} className="hover:underline">
+            <Link href="/" key={index} className="hover:underline text-gray-500">
               {item.guide}
             </Link>
           ))}
