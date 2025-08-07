@@ -23,7 +23,7 @@ export function ProductCard({ product }: ProductCardProps) {
       onMouseLeave={() => setIsHovered(false)}
     >
       {product.discount && (
-        <Badge className="absolute rounded-none px-1 lg:px-3  text-xs lg:text-sm font-semibold py-2 top-4 -right-3 bg-[#088F8F] text-white">
+        <Badge className="absolute rounded-none md:px-1   px-0 text-xs lg:text-sm font-semibold py-2 top-4 -right-1 xl:-right-3 bg-[#088F8F] text-white">
           -{product.discount}%
         </Badge>
       )}
@@ -39,14 +39,16 @@ export function ProductCard({ product }: ProductCardProps) {
 
       <div className="space-y-2">
         <div className="font-medium text-sm px-4">
-          <p className="text-sm lg:text-base xl:text-lg">{product.name}</p>
+          <p className="text-xs md:text-sm lg:text-base xl:text-lg">
+            {product.name}
+          </p>
           <p className="font-semibold text-xs lg:text-sm">{product.model}</p>
         </div>
 
         {/* Conditionally render price or icons based on hover */}
         {!isHovered ? (
           <div className="flex items-center space-x-2 px-4 py-2">
-            <span className="text-lg lg:text-xl font-semibold text-[#088F8F]">
+            <span className="text-sm md:text-lg lg:text-xl font-semibold text-[#088F8F]">
               GHS{product.price.toLocaleString()}
             </span>
             {product.originalPrice && (

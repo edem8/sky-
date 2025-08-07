@@ -34,9 +34,11 @@ export function ProductToolbar({
 
       <div className="flex items-center space-x-4">
         <div className="flex items-center space-x-2">
-          <span className="text-xs lg:text-sm text-gray-600">Sort by</span>
+          <span className="text-xs lg:text-sm hidden md:inline text-gray-600">
+            Sort by
+          </span>
           <Select value={sortBy} onValueChange={onSortChange}>
-            <SelectTrigger className="w-25 md:w-40 rounded lg:w-60 py-5 md:py-8">
+            <SelectTrigger className="w-31 md:w-40 rounded lg:w-60 py-5 md:py-8">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>

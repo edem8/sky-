@@ -23,7 +23,7 @@ export function Header() {
     <header className="bg-white w-full sticky top-0 z-50">
       <div className="border-b relative">
         {/* Top navigation */}
-        <div className="flex items-center justify-between py-8 text-xs lg:text-sm text-gray-600 bg-[#088F8F] px-2 lg:px-4">
+        <div className="flex items-center justify-between py-5 md:py-8 text-xs lg:text-sm text-gray-600 bg-[#088F8F] px-2 lg:px-4">
           <Download />
 
           {/* Hamburger menu button - mobile only */}
