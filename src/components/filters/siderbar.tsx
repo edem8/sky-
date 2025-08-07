@@ -9,35 +9,29 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface SidebarFiltersProps {
   onFiltersChange: (filters: FilterState) => void;
+  filters: FilterState;
 }
 
-export function SidebarFilters({ onFiltersChange }: SidebarFiltersProps) {
-  const [filters, setFilters] = useState<FilterState>({
-    priceMin: 1000,
-    priceMax: 5000,
-    manufacturers: [],
-    heights: ["120-170"],
-    hasDisplay: null,
-    colors: [],
-    freezerTypes: [],
-    volumes: [],
-  });
-
+export function SidebarFilters({
+  onFiltersChange,
+  filters,
+}: SidebarFiltersProps) {
   const [expandedFilters, setExpandedFilters] = useState<{
     [key: string]: boolean;
   }>({
     manufacturers: true,
     heights: true,
     hasDisplay: true,
-    colors: true,
+    colors: false,
     freezerTypes: true,
     volumes: true,
-    price: true, // Added price filter state
+    price: true,
   });
 
   const updateFilters = (newFilters: Partial<FilterState>) => {
+    if (!filters) return;
     const updated = { ...filters, ...newFilters };
-    setFilters(updated);
+
     onFiltersChange(updated);
   };
 
@@ -49,19 +43,19 @@ export function SidebarFilters({ onFiltersChange }: SidebarFiltersProps) {
   };
 
   const heightOptions = [
-    { value: "100", label: "39 in (5)", count: 5 },
-    { value: "110", label: "43 in (7)", count: 7 },
-    { value: "120-170", label: "47 - 67 in (14)", count: 14 },
-    { value: "190", label: "75 in (10)", count: 10 },
+    { value: "100", label: "39 in ", count: 5 },
+    { value: "110", label: "43 in", count: 7 },
+    { value: "120-170", label: "47 - 67 in ", count: 14 },
+    { value: "190", label: "75 in ", count: 10 },
   ];
 
   const displayOptions = [
-    { value: "no", label: "No (60)", count: 60 },
-    { value: "yes", label: "Yes (84)", count: 84 },
+    { value: "no", label: "No ", count: 60 },
+    { value: "yes", label: "Yes ", count: 84 },
   ];
 
   return (
-    <div className="w-45 lg:w-60 xl:w-90 bg-gray-50 p-4  space-y-4 lg:space-y-6">
+    <div className="w-45 lg:w-60 xl:w-90 bg-gray-50 p-4 hidden md:block space-y-4 lg:space-y-6">
       {/* Price Filter */}
       <div>
         <div

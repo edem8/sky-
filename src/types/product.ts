@@ -13,6 +13,7 @@ export interface Product {
   freezerType: string;
   volume: number;
   inStock: boolean;
+  category: "appliance" | "electronics"; 
 }
 
 export interface FilterState {
@@ -24,4 +25,5 @@ export interface FilterState {
   colors: string[];
   freezerTypes: string[];
   volumes: string[];
+  categories: ("appliance" | "electronics")[];
 }

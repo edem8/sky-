@@ -10,22 +10,36 @@ import { SidebarFilters } from "@/components/filters/siderbar";
 import Paginator from "@/components/layout/main/pagination";
 
 export default function HomePage() {
+  const priceValues = products.map((p) => p.price);
+  const minPrice = Math.min(...priceValues);
+  const maxPrice = Math.max(...priceValues);
+
   const [filters, setFilters] = useState<FilterState>({
-    priceMin: 125,
-    priceMax: 843,
+    priceMin: minPrice,
+    priceMax: maxPrice,
     manufacturers: [],
-    heights: [],
+    heights: ["120-170"],
     hasDisplay: null,
     colors: [],
     freezerTypes: [],
     volumes: [],
+    categories: ["appliance"],
   });
 
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const [sortBy, setSortBy] = useState("popular");
+  const [sortBy, setSortBy] = useState("name");
 
   const filteredProducts = useMemo(() => {
     const filtered = products.filter((product) => {
+      // Category filter
+
+      if (
+        filters.categories.length > 0 &&
+        (!product.category || !filters.categories.includes(product.category))
+      ) {
+        return false;
+      }
+
       // Price filter
       if (
         product.price < filters.priceMin ||
@@ -106,7 +120,7 @@ export default function HomePage() {
       <Breadcrumb />
       <div className=" mx-auto px-2 lg:px-8 xl:px-20 pt-2 py-6">
         <div className="flex gap-1 lg:gap-3 xl:gap-6">
-          <SidebarFilters onFiltersChange={setFilters} />
+          <SidebarFilters onFiltersChange={setFilters} filters={filters} />
 
           <div className="flex-1">
             <ProductToolbar

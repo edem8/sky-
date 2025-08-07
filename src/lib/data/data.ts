@@ -17,6 +17,7 @@ export const products: Product[] = [
     freezerType: "Bottom Freezer",
     volume: 300,
     inStock: true,
+    category: "appliance",
   },
   {
     id: "2",
@@ -34,6 +35,7 @@ export const products: Product[] = [
     freezerType: "Bottom Freezer",
     volume: 300,
     inStock: true,
+    category: "appliance",
   },
   {
     id: "3",
@@ -51,6 +53,7 @@ export const products: Product[] = [
     freezerType: "Bottom Freezer",
     volume: 300,
     inStock: true,
+    category: "appliance",
   },
   {
     id: "4",
@@ -68,6 +71,7 @@ export const products: Product[] = [
     freezerType: "Top Freezer",
     volume: 350,
     inStock: true,
+    category: "appliance",
   },
   {
     id: "5",
@@ -85,8 +89,8 @@ export const products: Product[] = [
     freezerType: "Side-by-side",
     volume: 400,
     inStock: true,
+    category: "appliance",
   },
-  ,
   {
     id: "6",
     name: "Refrigerator LG",
@@ -103,8 +107,9 @@ export const products: Product[] = [
     freezerType: "Side-by-side",
     volume: 400,
     inStock: true,
+    category: "appliance",
   },
-  ,
+
   {
     id: "7",
     name: "Refrigerator LG",
@@ -121,8 +126,9 @@ export const products: Product[] = [
     freezerType: "Side-by-side",
     volume: 400,
     inStock: true,
+    category: "appliance",
   },
-  ,
+
   {
     id: "8",
     name: "Refrigerator LG",
@@ -139,6 +145,7 @@ export const products: Product[] = [
     freezerType: "Side-by-side",
     volume: 400,
     inStock: true,
+    category: "appliance",
   },
   {
     id: "9",
@@ -156,6 +163,7 @@ export const products: Product[] = [
     freezerType: "Bottom Freezer",
     volume: 250,
     inStock: true,
+    category: "appliance",
   },
 ];
 

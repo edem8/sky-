@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 py-10 xl:py-20 mt-8 px-4 md:px-10">
+    <footer className="bg-gray-50 py-10 xl:py-20 mt-8 px-4 md:px-10 ">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8 mb-8 text-xs lg:text-sm">
@@ -169,9 +169,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center text-xs lg:text-sm text-gray-500  mt-6 pt-6 border-t border-gray-200">
-          <p>
-            (c) 2013 - 2020 Home appliances and electronics online store - Sky
-          </p>
+          <p>(c) Sky home appliances and electronics online store - 2025</p>
         </div>
       </div>
     </footer>

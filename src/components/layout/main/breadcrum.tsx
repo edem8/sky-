@@ -3,7 +3,7 @@ import { ChevronRight } from "lucide-react";
 
 const breadcrumbItems = [
   { label: "Home", href: "/" },
-  { label: "Home Applicances", href: "/" },
+  { label: " Applicances", href: "/" },
   {
     label: "Refrigerators",
     href: "/kitchen/refrigerators/fridges",
@@ -13,12 +13,12 @@ const breadcrumbItems = [
 
 export function Breadcrumb() {
   return (
-    <nav className=" border-muted/50 py-4 xl:py-2">
+    <nav className=" border-muted/50 py-2 md:py-4 xl:py-2">
       <div className="container mx-auto px-4">
-        <ol className="flex items-center space-x-2 text-xs lg:text-sm text-gray-600">
+        <ol className="flex items-center  space-x-2 text-xs lg:text-sm text-gray-600">
           {breadcrumbItems.map((item, index) => (
             <li key={index} className="flex items-center">
-              {index > 0 && <ChevronRight className="w-4 h-4 mx-2" />}
+              {index > 0 && <ChevronRight className="w-4 h-4 mx-1 md:mx-2" />}
               {item.active ? (
                 <span className="text-[#088F8F]">{item.label}</span>
               ) : (

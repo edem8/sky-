@@ -23,13 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-mono  antialiased`}>
-        <main className=" flex-col font-inter tracking-wider mx-auto  bg-white  hidden md:flex">
+        <main className=" flex-col font-inter tracking-wider mx-auto  bg-white  flex">
           <Header />
           {children}
           <Footer />
-        </main>
-        <main className=" flex-col font-semibold tracking-wide text-4xl font-inter items-center justify-center bg-white h-screen flex md:hidden">
-          Building...
         </main>
       </body>
     </html>

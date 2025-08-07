@@ -26,24 +26,24 @@ export function ProductToolbar({
   onSortChange,
 }: ProductToolbarProps) {
   return (
-    <div className="flex items-center justify-around bg-gray-50 py-6 border-b px-2">
+    <div className="flex items-center justify-around bg-gray-50 py-6 border-b  md:px-2">
       <div className="flex items-center space-x-2 lg:space-x-4">
         <span className="text-sm lg:text-lg font-bold">{totalProducts}</span>
-        <span className="text-xs lg:text-sm text-gray-600">products found</span>
+        <span className="text-xs lg:text-sm text-gray-600">products </span>
       </div>
 
       <div className="flex items-center space-x-4">
         <div className="flex items-center space-x-2">
           <span className="text-xs lg:text-sm text-gray-600">Sort by</span>
           <Select value={sortBy} onValueChange={onSortChange}>
-            <SelectTrigger className="w-40 rounded-sm lg:w-60 py-8">
+            <SelectTrigger className="w-25 md:w-40 rounded lg:w-60 py-5 md:py-8">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="popular">Popularity</SelectItem>
+              <SelectItem value="name">Name</SelectItem>
               <SelectItem value="price-asc">Price (Low to High)</SelectItem>
               <SelectItem value="price-desc">Price (High to Low)</SelectItem>
-              <SelectItem value="name">Name</SelectItem>
+              <SelectItem value="popular">Popularity</SelectItem>
             </SelectContent>
           </Select>
         </div>
