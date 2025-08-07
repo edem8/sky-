@@ -61,18 +61,20 @@ export function SidebarFilters({ onFiltersChange }: SidebarFiltersProps) {
   ];
 
   return (
-    <div className="w-60 xl:w-90 bg-gray-50 p-4  space-y-6">
+    <div className="w-45 lg:w-60 xl:w-90 bg-gray-50 p-4  space-y-4 lg:space-y-6">
       {/* Price Filter */}
       <div>
         <div
           className="flex justify-between items-center cursor-pointer"
           onClick={() => toggleFilter("price")}
         >
-          <span className="text-sm font-semibold text-gray-700">Price</span>
+          <span className="text-xs  lg:text-sm font-semibold text-gray-700">
+            Price
+          </span>
           {expandedFilters.price ? (
-            <ChevronUp className="text-gray-700 w-4 h-4" />
+            <ChevronUp className="text-gray-700 w-3 h-3 lg:w-4 lg:h-4" />
           ) : (
-            <ChevronDown className="text-gray-700 w-4 h-4" />
+            <ChevronDown className="text-gray-700 w-3 h-3 lg:w-4 lg:h-4" />
           )}
         </div>
         {expandedFilters.price && (
@@ -92,13 +94,13 @@ export function SidebarFilters({ onFiltersChange }: SidebarFiltersProps) {
           className="flex justify-between items-center cursor-pointer"
           onClick={() => toggleFilter("manufacturers")}
         >
-          <span className="text-sm font-semibold text-gray-700">
+          <span className="text-xs lg:text-sm font-semibold text-gray-700">
             Manufacturer
           </span>
           {expandedFilters.manufacturers ? (
-            <ChevronUp className="text-gray-700 w-4 h-4" />
+            <ChevronUp className="text-gray-700 w-3 h-3 lg:w-4 lg:h-4" />
           ) : (
-            <ChevronDown className="text-gray-700 w-4 h-4" />
+            <ChevronDown className="text-gray-700 w-3 h-3 lg:w-4 lg:h-4" />
           )}
         </div>
         {expandedFilters.manufacturers && (
@@ -119,11 +121,13 @@ export function SidebarFilters({ onFiltersChange }: SidebarFiltersProps) {
           className="flex justify-between items-center cursor-pointer"
           onClick={() => toggleFilter("heights")}
         >
-          <span className="text-sm font-semibold text-gray-700">Height</span>
+          <span className="text-xs lg:text-sm font-semibold text-gray-700">
+            Height
+          </span>
           {expandedFilters.heights ? (
-            <ChevronUp className="text-gray-700 w-4 h-4" />
+            <ChevronUp className="text-gray-700 w-3 h-3 lg:w-4 lg:h-4" />
           ) : (
-            <ChevronDown className="text-gray-700 w-4 h-4" />
+            <ChevronDown className="text-gray-700 w-3 h-3 lg:w-4 lg:h-4" />
           )}
         </div>
         {expandedFilters.heights && (
@@ -142,11 +146,13 @@ export function SidebarFilters({ onFiltersChange }: SidebarFiltersProps) {
           className="flex justify-between items-center cursor-pointer"
           onClick={() => toggleFilter("hasDisplay")}
         >
-          <span className="text-sm font-semibold text-gray-700">Display</span>
+          <span className="text-xs lg:text-sm font-semibold text-gray-700">
+            Display
+          </span>
           {expandedFilters.hasDisplay ? (
-            <ChevronUp className="text-gray-700 w-4 h-4" />
+            <ChevronUp className="text-gray-700 w-3 h-3 lg:w-4 lg:h-4" />
           ) : (
-            <ChevronDown className="text-gray-700 w-4 h-4" />
+            <ChevronDown className="text-gray-700 w-3 h-3 lg:w-4 lg:h-4" />
           )}
         </div>
         {expandedFilters.hasDisplay && (
@@ -178,11 +184,13 @@ export function SidebarFilters({ onFiltersChange }: SidebarFiltersProps) {
           className="flex justify-between items-center cursor-pointer"
           onClick={() => toggleFilter("colors")}
         >
-          <span className="text-sm font-semibold text-gray-700">Color</span>
+          <span className="text-xs lg:text-sm font-semibold text-gray-700">
+            Color
+          </span>
           {expandedFilters.colors ? (
-            <ChevronUp className="text-gray-700 w-4 h-4" />
+            <ChevronUp className="text-gray-700 w-3 h-3 lg:w-4 lg:h-4" />
           ) : (
-            <ChevronDown className="text-gray-700 w-4 h-4" />
+            <ChevronDown className="text-gray-700 w-3 h-3 lg:w-4 lg:h-4" />
           )}
         </div>
         {expandedFilters.colors && (
@@ -201,13 +209,13 @@ export function SidebarFilters({ onFiltersChange }: SidebarFiltersProps) {
           className="flex justify-between items-center cursor-pointer"
           onClick={() => toggleFilter("freezerTypes")}
         >
-          <span className="text-sm font-semibold text-gray-700">
+          <span className="text-xs lg:text-sm font-semibold text-gray-700">
             Freezer Type
           </span>
           {expandedFilters.freezerTypes ? (
-            <ChevronUp className="text-gray-700 w-4 h-4" />
+            <ChevronUp className="text-gray-700 w-3 h-3 lg:w-4 lg:h-4" />
           ) : (
-            <ChevronDown className="text-gray-700 w-4 h-4" />
+            <ChevronDown className="text-gray-700 w-3 h-3 lg:w-4 lg:h-4" />
           )}
         </div>
         {expandedFilters.freezerTypes && (
@@ -228,13 +236,13 @@ export function SidebarFilters({ onFiltersChange }: SidebarFiltersProps) {
           className="flex justify-between items-center cursor-pointer"
           onClick={() => toggleFilter("volumes")}
         >
-          <span className="text-sm font-semibold text-gray-700">
-            Refrigerator Volume
+          <span className="text-xs lg:text-sm font-semibold text-gray-700">
+            Volume
           </span>
           {expandedFilters.volumes ? (
-            <ChevronUp className="text-gray-700 w-4 h-4" />
+            <ChevronUp className="text-gray-700 w-3 h-3 lg:w-4 lg:h-4" />
           ) : (
-            <ChevronDown className="text-gray-700 w-4 h-4" />
+            <ChevronDown className="text-gray-700 w-3 h-3 lg:w-4 lg:h-4" />
           )}
         </div>
         {expandedFilters.volumes && (

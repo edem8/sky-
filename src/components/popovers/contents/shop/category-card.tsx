@@ -6,17 +6,12 @@ import React from "react";
 interface categoryItemProps {
   name: string;
   image: string;
- 
 }
 
-export default function CategoryItemCard({
- 
-  name,
-  image,
-}: categoryItemProps) {
+export default function CategoryItemCard({ name, image }: categoryItemProps) {
   return (
     <Link key={Item.name} href="/">
-      <div className="flex flex-col items-center tracking-wider font-semibold text-gray-600 gap-4">
+      <div className="flex flex-col items-center tracking-wider font-semibold text-gray-600 gap-2 lg:gap-4">
         <div className="overflow-hidden">
           <Image
             src={image}
@@ -26,7 +21,7 @@ export default function CategoryItemCard({
             className="transition-transform transform hover:scale-110"
           />
         </div>
-        <p>{name}</p>
+        <p className="text-sm">{name}</p>
       </div>
     </Link>
   );

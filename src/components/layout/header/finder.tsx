@@ -14,7 +14,7 @@ export default function Finder() {
   return (
     <div className="flex items-center space-x-2 ">
       <Select defaultValue="catalog">
-        <SelectTrigger className="w-50 rounded-none py-8 cursor-pointer bg-gray-50">
+        <SelectTrigger className="w-40 lg:w-50 rounded-none  py-7 lg:py-8 cursor-pointer bg-gray-50">
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
@@ -26,14 +26,14 @@ export default function Finder() {
       <div className="relative flex-1 max-w-md">
         <Input
           placeholder="I'm looking for..."
-          className="pr-10 rounded-none py-8"
+          className="pr-10  rounded-none  py-7 lg:py-8"
         />
       </div>
 
       <div>
         <Button
           variant="default"
-          className="rounded-none py-8 gap-1 cursor-pointer bg-[#088F8F] hover:bg-[#5dadad]"
+          className="rounded-none py-7 lg:py-8 gap-1 cursor-pointer bg-[#088F8F] hover:bg-[#5dadad]"
         >
           Search <Search className="w-5 h-5" />
         </Button>

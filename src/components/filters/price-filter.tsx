@@ -28,13 +28,13 @@ export function PriceFilter({ min, max, onPriceChange }: PriceFilterProps) {
 
   return (
     <div className="space-y-3">
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-1 lg:space-x-2">
         <div className="flex-1">
           <Input
             type="number"
             value={minPrice}
             onChange={(e) => handleMinChange(e.target.value)}
-            className="text-sm mt-2"
+            className="text-xs lg:text-sm mt-2 "
           />
           <Label className="text-xs pl-2 py-1 text-gray-500">GHS</Label>
         </div>

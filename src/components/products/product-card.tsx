@@ -18,12 +18,12 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div
-      className="bg-white rounded-none border  cursor-pointer hover:shadow-md transition-shadow text-gray-700 relative hover:scale-102 hover:border-[#088F8F]"
+      className="bg-white rounded-none border  cursor-pointer hover:shadow-md transition-shadow text-gray-700 relative hover:scale-101 lg:hover:scale-102 hover:border-[#088F8F]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {product.discount && (
-        <Badge className="absolute rounded-none px-3 font-semibold py-2 top-4 -right-3 bg-[#088F8F] text-white">
+        <Badge className="absolute rounded-none px-1 lg:px-3  text-xs lg:text-sm font-semibold py-2 top-4 -right-3 bg-[#088F8F] text-white">
           -{product.discount}%
         </Badge>
       )}
@@ -39,18 +39,18 @@ export function ProductCard({ product }: ProductCardProps) {
 
       <div className="space-y-2">
         <div className="font-medium text-sm px-4">
-          <p className="text-base xl:text-lg">{product.name}</p>
-          <p className="font-semibold">{product.model}</p>
+          <p className="text-sm lg:text-base xl:text-lg">{product.name}</p>
+          <p className="font-semibold text-xs lg:text-sm">{product.model}</p>
         </div>
 
         {/* Conditionally render price or icons based on hover */}
         {!isHovered ? (
           <div className="flex items-center space-x-2 px-4 py-2">
-            <span className="text-xl font-semibold text-[#088F8F]">
+            <span className="text-lg lg:text-xl font-semibold text-[#088F8F]">
               GHS{product.price.toLocaleString()}
             </span>
             {product.originalPrice && (
-              <span className="text-sm text-gray-500 font-semibold line-through">
+              <span className="text-xs lg:stext-sm text-gray-500 font-semibold line-through">
                 GHS{product.originalPrice.toLocaleString()}
               </span>
             )}

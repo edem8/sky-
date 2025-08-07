@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 py-10 xl:py-20 mt-8 px-4 md:px-6">
+    <footer className="bg-gray-50 py-10 xl:py-20 mt-8 px-4 md:px-10">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8 mb-8 text-xs lg:text-sm">
           {/* About Store */}
           <div>
             <h3 className="font-semibold text-gray-800 mb-4">About Store</h3>
@@ -99,7 +99,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-4">
               <div className="flex-1">
-                <p className="text-gray-600 mb-2">
+                <p className="text-gray-600 mb-2 md:mt-6 lg:mt-0">
                   Subscribe to newsletter to receive
                 </p>
 
@@ -107,7 +107,7 @@ export default function Footer() {
                   <Input
                     type="email"
                     placeholder="Enter your email"
-                    className="flex-1 py-8 xl:py-10 px-6 tracking-wider rounded-none"
+                    className="flex-1 py-8 xl:py-10 px-6  w-[50vw] lg:w-full tracking-wider rounded-none"
                   />
                   <Button className="bg-[#088F8F] hover:bg-g[#088F8F]  cursor-pointer py-8 xl:py-10 rounded-none text-white px-6">
                     Subscribe
@@ -119,16 +119,16 @@ export default function Footer() {
         </div>
 
         {/* Contact Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center my-15 gap-6">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center my-10 lg:my-15 gap-6">
           {/* Contact Info */}
           <div className="flex items-center gap-4 text-gray-600">
             <div className="flex items-center gap-2">
               <Headset className="w-20 h-20 text-[#088F8F]" />
               <div>
-                <p className="text-sm">
+                <p className="text-xs lg:text-sm">
                   Have questions? Call from 9:00 to 20:00
                 </p>
-                <div className="flex gap-2 text-lg font-semibold text-gray-800">
+                <div className="flex gap-2 text-sm lg:text-lg font-semibold text-gray-800">
                   <span>024-03-11-010</span>
                   <span className="text-gray-400">or</span>
                   <span>050-0-148-220</span>
@@ -140,7 +140,9 @@ export default function Footer() {
           {/* Social Media */}
           <div className="flex items-center justify-between  border-gray-200 ">
             <div className="flex items-center gap-4">
-              <span className="text-gray-600">We&apos;re on social media</span>
+              <span className="text-gray-600 text-xs lg:text-sm">
+                We&apos;re on social media
+              </span>
               <div className="flex gap-3">
                 <Link
                   href="#"
@@ -166,7 +168,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="text-center text-gray-500 text-sm mt-6 pt-6 border-t border-gray-200">
+        <div className="text-center text-xs lg:text-sm text-gray-500  mt-6 pt-6 border-t border-gray-200">
           <p>
             (c) 2013 - 2020 Home appliances and electronics online store - Sky
           </p>

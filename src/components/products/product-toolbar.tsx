@@ -26,17 +26,17 @@ export function ProductToolbar({
   onSortChange,
 }: ProductToolbarProps) {
   return (
-    <div className="flex items-center justify-around bg-gray-50 py-6 border-b">
-      <div className="flex items-center space-x-4">
-        <span className="text-lg font-bold">{totalProducts}</span>
-        <span className="text-gray-600">products found</span>
+    <div className="flex items-center justify-around bg-gray-50 py-6 border-b px-2">
+      <div className="flex items-center space-x-2 lg:space-x-4">
+        <span className="text-sm lg:text-lg font-bold">{totalProducts}</span>
+        <span className="text-xs lg:text-sm text-gray-600">products found</span>
       </div>
 
       <div className="flex items-center space-x-4">
         <div className="flex items-center space-x-2">
-          <span className="text-sm text-gray-600">Sort by</span>
+          <span className="text-xs lg:text-sm text-gray-600">Sort by</span>
           <Select value={sortBy} onValueChange={onSortChange}>
-            <SelectTrigger className="w-60 py-8">
+            <SelectTrigger className="w-40 rounded-sm lg:w-60 py-8">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -49,7 +49,7 @@ export function ProductToolbar({
         </div>
 
         <div className="flex items-center space-x-1">
-          <span className="text-sm text-gray-600">View</span>
+          <span className="text-xs lg:text-sm text-gray-600">View</span>
           <Button
             variant={viewMode === "grid" ? "default" : "ghost"}
             size="sm"
