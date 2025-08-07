@@ -40,7 +40,7 @@ export default function ShopCategories() {
     <div className="flex items-start justify-center px-2 lg:px-4 py-8 xl:p-8 border-b">
       {/* Category cards container */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 lg:gap-12 xl:gap-20">
-        {data.map((item, index) => (
+        {data.map((item) => (
           <div className="flex-shrink-0" key={item.name}>
             <CategoryItemCard name={item.name} image={item.image} />
           </div>
