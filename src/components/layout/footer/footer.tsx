@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="bg-gray-50 py-10 xl:py-20 mt-8 px-4 md:px-10 ">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8 mb-8 text-xs lg:text-sm">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8 mb-8 text-xs lg:text-sm">
           {/* About Store */}
           <div>
             <h3 className="font-semibold text-gray-800 mb-4">About Store</h3>
@@ -99,7 +99,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-4">
               <div className="flex-1">
-                <p className="text-gray-600 mb-2 md:mt-6 lg:mt-0">
+                <p className="text-gray-600 mb-2 mt-3 md:mt-6 lg:mt-0">
                   Subscribe to newsletter to receive
                 </p>
 
@@ -107,9 +107,9 @@ export default function Footer() {
                   <Input
                     type="email"
                     placeholder="Enter your email"
-                    className="flex-1 py-8 xl:py-10 px-6  w-[50vw] lg:w-full tracking-wider rounded-none"
+                    className="flex-1 py-6 md:py-8 xl:py-10 px-6  w-[50vw] lg:w-full tracking-wider text-xs md:text-sm rounded-none"
                   />
-                  <Button className="bg-[#088F8F] hover:bg-g[#088F8F]  cursor-pointer py-8 xl:py-10 rounded-none text-white px-6">
+                  <Button className="bg-[#088F8F] hover:bg-g[#088F8F]  cursor-pointer py-6 md:py-8 xl:py-10 rounded-none text-white md:px-6">
                     Subscribe
                   </Button>
                 </div>
@@ -123,7 +123,10 @@ export default function Footer() {
           {/* Contact Info */}
           <div className="flex items-center gap-4 text-gray-600">
             <div className="flex items-center gap-2">
-              <Headset className="w-20 h-20 text-[#088F8F]" />
+              <Headset
+                className="w-15 h-15 md:w-20 md:h-20 text-[#088F8F]"
+                strokeWidth={1.6}
+              />
               <div>
                 <p className="text-xs lg:text-sm">
                   Have questions? Call from 9:00 to 20:00

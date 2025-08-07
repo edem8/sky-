@@ -58,7 +58,7 @@ export function ProductCard({ product }: ProductCardProps) {
             )}
           </div>
         ) : (
-          <div className="flex items-center space-x-7 py-4 bg-[#89cfcf]  rounded-none text-white justify-center">
+          <div className="flex items-center space-x-7 py-3 md:py-4 bg-[#89cfcf]  rounded-none text-white justify-center">
             <div
               onClick={toggleHeart}
               className={`cursor-pointer  ${
@@ -66,13 +66,13 @@ export function ProductCard({ product }: ProductCardProps) {
               }`}
             >
               <Heart
-                className="w-8 h-8 hover:text-[#088F8F] transition-colors"
+                className=" w-7 h-7 md:w-8 md:h-8 hover:text-[#088F8F] transition-colors"
                 strokeWidth={1.5}
               />
             </div>
             <div className="cursor-pointer ">
               <ShoppingBag
-                className="w-8 h-8 hover:text-[#088F8F] transition-colors"
+                className=" w-7 h-7 md:w-8 md:h-8 hover:text-[#088F8F] transition-colors"
                 strokeWidth={1.5}
               />
             </div>

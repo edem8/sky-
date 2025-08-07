@@ -118,7 +118,7 @@ export default function HomePage() {
   return (
     <div className=" bg-white overflow-hidden">
       <Breadcrumb />
-      <div className=" mx-auto px-2 lg:px-8 xl:px-20 pt-2 py-6">
+      <div className=" mx-auto px-2 lg:px-8 xl:px-20 pt-0 md:pt-2 py-6">
         <div className="flex gap-1 lg:gap-3 xl:gap-6">
           <SidebarFilters onFiltersChange={setFilters} filters={filters} />
 
