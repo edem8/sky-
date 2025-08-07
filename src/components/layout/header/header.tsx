@@ -12,12 +12,20 @@ import ContactAndHelp from "@/components/popovers/Triggers/contact";
 import LoginIcons from "./login-icons";
 import Total from "./total";
 import { IoMenu, IoClose } from "react-icons/io5";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function Header() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isHomeAppliancesOpen, setIsHomeAppliancesOpen] = useState(true);
+  const [isElectronicsOpen, setIsElectronicsOpen] = useState(false);
 
   const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen);
   const closeDrawer = () => setIsDrawerOpen(false);
+
+  const toggleHomeAppliances = () =>
+    setIsHomeAppliancesOpen(!isHomeAppliancesOpen);
+  const toggleElectronics = () => setIsElectronicsOpen(!isElectronicsOpen);
 
   return (
     <header className="bg-white w-full sticky top-0 z-50">
@@ -74,7 +82,7 @@ export function Header() {
 
         {/* Drawer - mobile menu with smooth slide-in */}
         <div
-          className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ease-in-out ${
+          className={`fixed top-21 inset-0 z-40 md:hidden transition-opacity duration-300 ease-in-out ${
             isDrawerOpen
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"
@@ -85,30 +93,61 @@ export function Header() {
           onClick={closeDrawer}
         >
           <div
-            className={`fixed top-0 left-0 h-full w-80 bg-white shadow-lg p-6 space-y-4 transform transition-transform duration-300 ease-in-out ${
+            className={`fixed top-21 left-0 h-full w-80 bg-gray-50 text-gray-500 shadow-lg p-6 space-y-4 transform transition-transform duration-300 ease-in-out ${
               isDrawerOpen ? "translate-x-0" : "-translate-x-full"
             }`}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-between items-center mb-4">
-              <span className="text-lg font-bold text-gray-800">Menu</span>
-              <button onClick={closeDrawer} aria-label="Close menu">
-                <IoClose className="text-2xl" />
-              </button>
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-sm font-bold text-gray-800">
+                Shop & Categories
+              </span>
             </div>
-            <div className="flex flex-col space-y-4 text-sm text-gray-800 font-medium">
-              <Link href="#" onClick={closeDrawer}>
-                <Shop />
-              </Link>
-              <Link href="#" onClick={closeDrawer}>
-                <Brands />
-              </Link>
-              <Link href="#" onClick={closeDrawer}>
-                <ShippingAndPayment />
-              </Link>
-              <Link href="#" onClick={closeDrawer}>
-                <ContactAndHelp />
-              </Link>
+            <div className="flex flex-col space-y-2 text-xs text-gray-400 font-medium">
+              <div className="flex items-center justify-between">
+                <p onClick={toggleHomeAppliances} className="cursor-pointer">
+                  Home Appliances
+                </p>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={toggleHomeAppliances}
+                >
+                  {isHomeAppliancesOpen ? (
+                    <ChevronUp className="w-4 h-4 bg-gray-200  rounded-full" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4" />
+                  )}
+                </Button>
+              </div>
+              {isHomeAppliancesOpen && (
+                <div className="pl-4 space-y-2 text-xs text-gray-500 ">
+                  <p>Refrigerators</p>
+                  <p>Microwaves</p>
+                  <p>Vaccum Cleaner</p>
+                  <p>Washing Machines</p>
+                  <p>Freezers</p>
+                </div>
+              )}
+              <div className="flex items-center justify-between">
+                <p onClick={toggleElectronics} className="cursor-pointer">
+                  Air Conditioners
+                </p>
+                <Button variant="ghost" size="icon" onClick={toggleElectronics}>
+                  {isElectronicsOpen ? (
+                    <ChevronUp className="w-4 h-4 bg-gray-200  rounded-full" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4" />
+                  )}
+                </Button>
+              </div>
+              {isElectronicsOpen && (
+                <div className="pl-4 space-y-2 text-gray-500 text-xs">
+                  <p>Smartphones</p>
+                  <p>Laptops</p>
+                  <p>Headphones</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
