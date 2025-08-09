@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Facebook, Instagram, Mail, Headset } from "lucide-react";
+import { Facebook, Instagram, Mail, Headset, ThumbsUp } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="bg-gray-50 py-5 md:py-10 xl:py-20 md:mt-8 px-8 md:px-10 hidden md:block ">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-6 xl:gap-8 mb-8 text-xs lg:text-sm">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-6 xl:gap-8 mb-8 text-xs lg:text-sm ">
           {/* About Store */}
           <div>
             <h3 className="font-semibold text-gray-800 mb-4">About Store</h3>
@@ -96,7 +96,7 @@ export default function Footer() {
           </div>
 
           {/* Newsletter Signup */}
-          <div className=" lg:col-span-2">
+          <div className=" md:col-span-2">
             <div className="flex items-center  gap-4">
               <div className="flex-1">
                 <p className="text-gray-600 mb-2 mt-3 md:mt-6 lg:mt-0">
@@ -107,10 +107,13 @@ export default function Footer() {
                   <Input
                     type="email"
                     placeholder="Enter your email"
-                    className="flex-1 py-6 md:py-8 xl:py-10 px-6  w-[50vw] lg:w-full tracking-wider text-xs md:text-sm rounded-none"
+                    className="flex-1 py-6 md:py-7 lg:py-8 xl:py-10 px-6  w-[50vw] md:w-20 lg:w-full tracking-wider text-xs md:text-sm rounded-none"
                   />
-                  <Button className="bg-[#088F8F] hover:bg-g[#088F8F]  cursor-pointer py-6 md:py-8 xl:py-10 rounded-none text-white md:px-6">
-                    Subscribe
+                  <Button className="bg-[#088F8F] hover:bg-g[#088F8F]  cursor-pointer py-6 md:py-7 lg:py-8 xl:py-10 rounded-none text-white lg:px-6">
+                    <span className="hidden lg:inline">Subscribe </span>
+                    <span>
+                      <ThumbsUp className="w-8 h-8 inline lg:hidden" />
+                    </span>
                   </Button>
                 </div>
               </div>
@@ -119,12 +122,12 @@ export default function Footer() {
         </div>
 
         {/* Contact Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center my-10 lg:my-15 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start lg:items-center my-10 lg:my-15 gap-6">
           {/* Contact Info */}
           <div className="hidden md:flex items-center gap-4 text-gray-600">
             <div className="flex items-center gap-2">
               <Headset
-                className="w-15 h-15 md:w-20 md:h-20 text-[#088F8F]"
+                className="w-15 h-15 hidden lg:w-20 lg:h-20 text-[#088F8F]"
                 strokeWidth={1.6}
               />
               <div>
@@ -171,8 +174,8 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="text-center text-xs lg:text-sm text-gray-500  md:mt-6 pt-3 md:pt-6 border-t border-gray-200">
-          <p>Sky home appliances and electronics (c)2025</p>
+        <div className="text-center text-xs lg:text-sm text-gray-500  lg:mt-6 pt-3 lg:pt-6 border-t border-gray-200">
+          <p>ETK-SKY home appliances and electronics (c)2025</p>
         </div>
       </div>
     </footer>
