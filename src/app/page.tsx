@@ -18,7 +18,7 @@ export default function HomePage() {
     priceMin: minPrice,
     priceMax: maxPrice,
     manufacturers: [],
-    heights: ["120-170"],
+    heights: ["120-190"],
     hasDisplay: null,
     colors: [],
     freezerTypes: [],
@@ -61,9 +61,9 @@ export default function HomePage() {
         const hasMatchingHeight = filters.heights.some((height) => {
           if (height === "100") return product.height <= 100;
           if (height === "110") return product.height <= 110;
-          if (height === "120-170")
-            return product.height >= 120 && product.height <= 170;
-          if (height === "190") return product.height >= 190;
+          if (height === "120-190")
+            return product.height >= 120 && product.height <= 190;
+          if (height === "120") return product.height >= 120;
           return false;
         });
         if (!hasMatchingHeight) return false;
