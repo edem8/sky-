@@ -4,38 +4,38 @@ import Link from "next/link";
 
 const data = [
   {
-    name: "Refrigerators",
+    name: "",
     guide: "Refrigerator Buying guide",
-    image: "/assets/images/categories/freezer.png",
+    image: "/assets/images/brands/samsung.png",
   },
   {
-    name: "Microwaves",
+    name: "",
     guide: "Microwave Buying guide",
-    image: "/assets/images/categories/microwave.png",
+    image: "/assets/images/brands/samsung.png",
   },
   {
-    name: "Rangers",
+    name: "",
     guide: "Ranger Buying guide",
-    image: "/assets/images/categories/ranger.png",
+    image: "/assets/images/brands/samsung.png",
   },
   {
-    name: "Vaccums",
+    name: "",
     guide: "Vaccum Buying guide",
-    image: "/assets/images/categories/vaccum.png",
+    image: "/assets/images/brands/samsung.png",
   },
   {
-    name: "Dryers",
+    name: "",
     guide: "Dryer Buying guide",
-    image: "/assets/images/categories/dryer.png",
+    image: "/assets/images/brands/samsung.png",
   },
   {
-    name: "Accessories",
+    name: "",
     guide: "Accessories Buying guide",
-    image: "/assets/images/categories/accessories.png",
+    image: "/assets/images/brands/samsung.png",
   },
 ];
 
-export default function ShopCategories() {
+export default function BrandCategories() {
   return (
     <div className="flex items-start justify-center px-2 lg:px-4 py-8 xl:p-8 border-b">
       {/* Category cards container */}
@@ -53,7 +53,7 @@ export default function ShopCategories() {
       {/* Side content (e.g., guide or promo links) */}
       <div className="text-sm text-gray-800 px-2 xl:px-10  ">
         <p className="font-semibold tracking-wider text-xs xl:text-sm pb-2 border-b">
-          Purchasing Guide
+          Quick Links
         </p>
         <ul className="mt-4 space-y-3 flex flex-col  text-xs lg:text-sm">
           {data.map((item, index) => (

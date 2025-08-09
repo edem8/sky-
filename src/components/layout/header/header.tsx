@@ -11,9 +11,10 @@ import ShippingAndPayment from "@/components/popovers/Triggers/shipping-payment"
 import ContactAndHelp from "@/components/popovers/Triggers/contact";
 import LoginIcons from "./login-icons";
 import Total from "./total";
-import { IoMenu, IoClose } from "react-icons/io5";
+import { IoMenu } from "react-icons/io5";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Breadcrumb from "../main/breadcrum";
 
 export function Header() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -29,7 +30,7 @@ export function Header() {
 
   return (
     <header className="bg-white w-full sticky top-0 z-50">
-      <div className="border-b relative">
+      <div className="border-b border-muted/90 relative">
         {/* Top navigation */}
         <div className="flex items-center justify-between py-5 md:py-8 text-xs lg:text-sm text-gray-600 bg-[#088F8F] px-2 lg:px-4">
           <Download />
@@ -44,28 +45,28 @@ export function Header() {
           </button>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center text-xs lg:text-sm xl:space-x-8 mx-auto divide-x-1 lg:divide-x-2">
+          <nav className="hidden md:flex items-center text-xs lg:text-sm  divide-x-1 lg:divide-x-2">
             <Link
               href="#"
-              className="text-white font-semibold hover:text-gray-300 px-3 lg:px-4 xl:pr-6"
+              className="text-white font-semibold hover:text-gray-300 px-3  lg:px-4 xl:px-10"
             >
               <Shop />
             </Link>
             <Link
               href="#"
-              className="text-white font-semibold hover:text-gray-300 px-3 lg:px-4 xl:pr-6"
+              className="text-white font-semibold hover:text-gray-300 px-3 lg:px-4 xl:px-10"
             >
               <Brands />
             </Link>
             <Link
               href="#"
-              className="text-white font-semibold hover:text-gray-300 px-3 lg:px-4 xl:pr-6"
+              className="text-white font-semibold hover:text-gray-300  px-3 lg:px-4 xl:px-10"
             >
               <ShippingAndPayment />
             </Link>
             <Link
               href="#"
-              className="text-white font-semibold hover:text-gray-300 px-3 lg:px-4 xl:pr-6"
+              className="text-white font-semibold hover:text-gray-300  px-3 lg:px-4 xl:px-10"
             >
               <ContactAndHelp />
             </Link>
@@ -167,6 +168,7 @@ export function Header() {
           </div>
         </div>
       </div>
+      <Breadcrumb />
     </header>
   );
 }
