@@ -105,7 +105,10 @@ export function Header() {
             </div>
             <div className="flex flex-col space-y-2 text-xs text-gray-400 font-medium">
               <div className="flex items-center justify-between">
-                <p onClick={toggleHomeAppliances} className="cursor-pointer">
+                <p
+                  onClick={toggleHomeAppliances}
+                  className="cursor-pointer text-gray-500"
+                >
                   Home Appliances
                 </p>
                 <Button
@@ -130,7 +133,10 @@ export function Header() {
                 </div>
               )}
               <div className="flex items-center justify-between">
-                <p onClick={toggleElectronics} className="cursor-pointer">
+                <p
+                  onClick={toggleElectronics}
+                  className="cursor-pointer text-gray-500"
+                >
                   Air Conditioners
                 </p>
                 <Button variant="ghost" size="icon" onClick={toggleElectronics}>
@@ -143,9 +149,10 @@ export function Header() {
               </div>
               {isElectronicsOpen && (
                 <div className="pl-4 space-y-2 text-gray-500 text-xs">
-                  <p>Smartphones</p>
-                  <p>Laptops</p>
-                  <p>Headphones</p>
+                  <p>Split AC</p>
+                  <p>Window AC</p>
+                  <p>Inverter AC</p>
+                  <p>Floor Standing AC</p>
                 </div>
               )}
             </div>

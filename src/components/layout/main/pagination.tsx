@@ -16,7 +16,7 @@ export default function Paginator() {
         <PaginationItem>
           <PaginationPrevious
             href="#"
-            className="border-2 border-[#088F8F] rounded-none py-5 lg:py-6 hover:bg-gray-50"
+            className="border-2 border-[#088F8F] rounded-none md:py-5 lg:py-6 hover:bg-gray-50"
           />
         </PaginationItem>
         <PaginationItem>
@@ -28,7 +28,7 @@ export default function Paginator() {
         <PaginationItem>
           <PaginationNext
             href="#"
-            className="border-2 border-[#088F8F] rounded-none py-5 lg:py-6 hover:bg-gray-50 "
+            className="border-2 border-[#088F8F] rounded-none md:py-5 lg:py-6 hover:bg-gray-50 "
           />
         </PaginationItem>
       </PaginationContent>
