@@ -22,9 +22,9 @@ export function ProductCard({ product }: ProductCardProps) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {product.discount && (
+      {product.price.discount && (
         <Badge className="absolute rounded-none md:px-1   px-0 text-xs lg:text-sm font-semibold py-2 top-4 -right-1 xl:-right-3 bg-[#088F8F] text-white">
-          -{product.discount}%
+          -{product.price.discount}%
         </Badge>
       )}
 
@@ -49,11 +49,11 @@ export function ProductCard({ product }: ProductCardProps) {
         {!isHovered ? (
           <div className="flex items-center space-x-2 px-4 py-2">
             <span className="text-sm md:text-lg lg:text-xl font-semibold text-[#088F8F]">
-              GHS{product.price.toLocaleString()}
+              GHS{product.price.current.toLocaleString()}
             </span>
-            {product.originalPrice && (
+            {product.price.original && (
               <span className="text-xs lg:stext-sm text-gray-500 font-semibold line-through">
-                GHS{product.originalPrice.toLocaleString()}
+                GHS{product.price.original.toLocaleString()}
               </span>
             )}
           </div>

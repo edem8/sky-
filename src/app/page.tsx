@@ -9,7 +9,7 @@ import { SidebarFilters } from "@/components/filters/siderbar";
 import Paginator from "@/components/layout/main/pagination";
 
 export default function HomePage() {
-  const priceValues = products.map((p) => p.price);
+  const priceValues = products.map((p) => p.price.current);
   const minPrice = Math.min(...priceValues);
   const maxPrice = Math.max(...priceValues);
 
@@ -41,8 +41,8 @@ export default function HomePage() {
 
       // Price filter
       if (
-        product.price < filters.priceMin ||
-        product.price > filters.priceMax
+        product.price.current < filters.priceMin ||
+        product.price.current > filters.priceMax
       ) {
         return false;
       }
@@ -98,10 +98,10 @@ export default function HomePage() {
     // Sort products
     switch (sortBy) {
       case "price-asc":
-        filtered.sort((a, b) => a.price - b.price);
+        filtered.sort((a, b) => a.price.current - b.price.current);
         break;
       case "price-desc":
-        filtered.sort((a, b) => b.price - a.price);
+        filtered.sort((a, b) => b.price.current - a.price.current);
         break;
       case "name":
         filtered.sort((a, b) => a.name.localeCompare(b.name));

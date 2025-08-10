@@ -2,9 +2,11 @@ export interface Product {
   id: string;
   name: string;
   model: string;
-  price: number;
-  originalPrice?: number;
-  discount?: number;
+  price: {
+    current: number;
+    original: number;
+    discount: number;
+  };
   image: string;
   manufacturer: string;
   height: number;
@@ -13,7 +15,9 @@ export interface Product {
   freezerType: string;
   volume: number;
   inStock: boolean;
-  category: "appliance" | "electronics"; 
+  reviewCount: number;
+  rating: number;
+  category: "appliance" | "electronics";
 }
 
 export interface FilterState {
@@ -26,4 +30,25 @@ export interface FilterState {
   freezerTypes: string[];
   volumes: string[];
   categories: ("appliance" | "electronics")[];
+}
+
+export interface ProductDetail {
+  id: string;
+  name: string;
+  model: string;
+}
+
+export interface Color {
+  name: string;
+  class: string;
+}
+
+export interface SpecificationSection {
+  title: string;
+  items: SpecificationItem[];
+}
+
+export interface SpecificationItem {
+  label: string;
+  value: string;
 }
