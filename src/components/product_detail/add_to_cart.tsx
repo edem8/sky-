@@ -22,7 +22,7 @@ export function AddToCartSection({
   wishlistCount = 0,
 }: AddToCartSectionProps) {
   return (
-    <div className="flex items-center gap-4 flex-wrap">
+    <div className="flex items-center  gap-4 flex-wrap">
       <QuantitySelector
         quantity={quantity}
         onQuantityChange={onQuantityChange}
@@ -30,23 +30,28 @@ export function AddToCartSection({
 
       <Button
         onClick={onAddToCart}
-        className="bg-[#088F8F] hover:bg-[#088F8F] text-white px-6 py-7 rounded-none"
+        className="bg-[#088F8F] hover:bg-[#088F8F] text-white px-4 py-7 cursor-pointer rounded-none"
       >
         Add to Cart
       </Button>
 
-      <div className="flex items-center gap-2">
-        <Button
-          variant="ghost"
-          size="lg"
+      <div className="flex items-center gap-1 ">
+        <div
           onClick={onToggleWishlist}
-          className={`p-2 ${isInWishlist ? "text-red-500" : "text-gray-500"}`}
+          className={`p-1 lg:p-2 ${
+            isInWishlist ? "text-[#088F8F]" : "text-[#088F8F]"
+          } cursor-pointer`}
         >
-          <Heart className={`w-20 h-20 ${isInWishlist ? "fill-current" : ""}`} />
-        </Button>
-        {wishlistCount > 0 && (
-          <span className="text-sm text-gray-500">{wishlistCount}</span>
-        )}
+          <Heart
+            className={`lg:w-12 lg:h-12 cursor-pointer ${
+              isInWishlist ? "fill-current" : ""
+            }`}
+            strokeWidth={1.2}
+          />
+        </div>
+        <span className="text-xs pt-2 md:pt-1 font-medium lg:hidden">
+          Add to Wishlist
+        </span>
       </div>
     </div>
   );

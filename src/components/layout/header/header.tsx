@@ -108,7 +108,7 @@ export function Header() {
               <div className="flex items-center justify-between">
                 <p
                   onClick={toggleHomeAppliances}
-                  className="cursor-pointer text-gray-500"
+                  className="cursor-pointer text-gray-600"
                 >
                   Home Appliances
                 </p>
@@ -125,7 +125,7 @@ export function Header() {
                 </Button>
               </div>
               {isHomeAppliancesOpen && (
-                <div className="pl-4 space-y-2 text-xs text-gray-500 ">
+                <div className="pl-4 space-y-2 text-xs text-gray-600 ">
                   <p>Refrigerators</p>
                   <p>Microwaves</p>
                   <p>Vaccum Cleaner</p>
@@ -136,7 +136,7 @@ export function Header() {
               <div className="flex items-center justify-between">
                 <p
                   onClick={toggleElectronics}
-                  className="cursor-pointer text-gray-500"
+                  className="cursor-pointer text-gray-600"
                 >
                   Air Conditioners
                 </p>
@@ -149,7 +149,7 @@ export function Header() {
                 </Button>
               </div>
               {isElectronicsOpen && (
-                <div className="pl-4 space-y-2 text-gray-500 text-xs">
+                <div className="pl-4 space-y-2 text-gray-600 text-xs">
                   <p>Split AC</p>
                   <p>Window AC</p>
                   <p>Inverter AC</p>

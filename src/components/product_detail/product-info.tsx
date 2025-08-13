@@ -27,12 +27,14 @@ export function ProductInfo({ product }: ProductInfoProps) {
   };
 
   return (
-    <div className="space-y-6 flex flex-col justify-center">
+    <div className="space-y-6 flex  flex-col justify-center">
       <div>
-        <h1 className="text-xl font-bold text-gray-800 mb-3">
+        <h1 className="text-2xl md:text-base lg:text-xl font-bold text-gray-800 mb-3">
           {product.name}
           <br />
-          <span className="text-lg text-gray-700">{product.model}</span>
+          <span className=" text-xl md:text-sm lg:text-lg text-gray-700">
+            {product.model}
+          </span>
         </h1>
 
         <ProductRating

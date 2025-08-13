@@ -10,15 +10,15 @@ interface ProductImageProps {
 export function ProductImage({ src, alt, className }: ProductImageProps) {
   return (
     <Card
-      className={`border-0 shadow-none aspect-square relative ${className}`}
+      className={`border-0 shadow-none aspect-square md:py-0  relative ${className}`}
     >
-      <CardContent className=" flex justify-center  ">
+      <CardContent className=" flex justify-center p-0 ">
         <Image
-          src={src || "/assets/images/details/refrigerators/refriferator.jpg"}
+          src={"/assets/images/categories/freezer.png"}
           alt={alt}
-          width={300}
-          height={400}
-          className="object-contain"
+          width={500}
+          height={500}
+          className=" w-[800px] sm:w-[900px] md:w-[500px] lg:w-[400px] object-contain "
         />
       </CardContent>
     </Card>

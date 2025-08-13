@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import type { Product } from "@/types/product";
 import { Heart, ShoppingBag } from "lucide-react";
+import Link from "next/link";
 
 interface ProductCardProps {
   product: Product;
@@ -28,14 +29,16 @@ export function ProductCard({ product }: ProductCardProps) {
         </Badge>
       )}
 
-      <div className="aspect-square mb-4 relative">
-        <Image
-          src={product.image || "/assets/images/Freezer.png"}
-          alt={`${product.name} ${product.model}`}
-          fill
-          className="object-contain"
-        />
-      </div>
+      <Link href="/details">
+        <div className="aspect-square mb-4 relative">
+          <Image
+            src={product.image || "/assets/images/Freezer.png"}
+            alt={`${product.name} ${product.model}`}
+            fill
+            className="object-contain"
+          />
+        </div>
+      </Link>
 
       <div className="space-y-2">
         <div className="font-medium text-sm px-4">
