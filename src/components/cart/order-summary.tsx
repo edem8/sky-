@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface OrderSummaryProps {
   total: number;
@@ -28,9 +29,11 @@ export function OrderSummary({ total }: OrderSummaryProps) {
         </div>
       </div>
 
-      <Button className="w-full bg-[#088F8F] py-7 hover:bg-[#088F8F] text-white cursor-pointer rounded-none text-base">
-        Continue to Checkout
-      </Button>
+      <Link href="/checkout">
+        <Button className="w-full bg-[#088F8F] py-7 hover:bg-[#088F8F] text-white cursor-pointer rounded-none text-base">
+          Continue to Checkout
+        </Button>
+      </Link>
     </div>
   );
 }
