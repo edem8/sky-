@@ -57,7 +57,7 @@ export default function ShoppingCart() {
     <div className="min-h-screen bg-gray-50 py-8 px-4">
       <div className="max-w-2xl lg:max-w-4xl mx-auto space-y-6">
         {/* Cart Items */}
-        <div className="space-y-2">
+        <div className="space-y-4">
           {cartItems.map((item) => (
             <CartItem
               key={item.id}
