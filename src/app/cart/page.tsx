@@ -8,6 +8,7 @@ import { useState } from "react";
 interface CartItemType {
   id: number;
   name: string;
+  model:string;
   price: number;
   quantity: number;
   image: string;
@@ -16,14 +17,16 @@ export default function ShoppingCart() {
   const [cartItems, setCartItems] = useState<CartItemType[]>([
     {
       id: 1,
-      name: "Atlant Refrigerator MXM 4025-000",
+      name: "Atlant Refrigerator ",
+      model:"MXM 4025-000",
       price: 1250,
       quantity: 1,
       image: "/assets/images/categories/freezer.png",
     },
     {
       id: 2,
-      name: "Tester Microwave Oven ME-2053",
+      name: "Tester Microwave Oven ",
+      model:"ME-2053",
       price: 185,
       quantity: 2,
       image: "/assets/images/categories/microwave.png",
@@ -52,7 +55,7 @@ export default function ShoppingCart() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4">
-      <div className="max-w-3xl lg:max-w-4xl mx-auto space-y-6">
+      <div className="max-w-2xl lg:max-w-4xl mx-auto space-y-6">
         {/* Cart Items */}
         <div className="space-y-2">
           {cartItems.map((item) => (

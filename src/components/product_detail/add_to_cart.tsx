@@ -20,8 +20,9 @@ export function AddToCartSection({
   return (
     <div className="flex items-center gap-2   lg:gap-3 flex-wrap">
       <Button
+      variant={"outline"}
         onClick={onAddToCart}
-        className="bg-[#088F8F] hover:bg-[#088F8F] text-white px-2   sm:px-4 py-7 cursor-pointer hidden lg:flex rounded-none"
+        className="text-[#088F8F] hover:bg-[#088F8F] hover:text-white px-2   sm:px-4 py-6 border-2 cursor-pointer hidden lg:flex rounded-none"
       >
         Add to Cart
       </Button>
