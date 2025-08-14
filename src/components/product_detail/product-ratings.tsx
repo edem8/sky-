@@ -18,7 +18,7 @@ export function ProductRating({
         {Array.from({ length: maxRating }, (_, i) => (
           <Star
             key={i}
-            className={`w-4 h-4 md:w-3 md:h-3 lg:w-4 lg:h-4 ${
+            className={`w-4 h-4   ${
               i < rating ? "fill-[#088F8F] text-[#088F8F]" : "text-gray-300"
             }`}
           />

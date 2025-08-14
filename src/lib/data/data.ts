@@ -240,8 +240,8 @@ export const specifications: SpecificationSection[] = [
     title: "Cooling",
     items: [
       {
-        label: "Additional Features",
-        value: "Super freeze, temperature indication",
+        label: "Extra Features",
+        value: "Super freeze, Temp indication",
       },
       { label: "Freezing Capacity", value: "up to 3.5 kg/day" },
       { label: "Refrigerator Defrost", value: "No Frost" },

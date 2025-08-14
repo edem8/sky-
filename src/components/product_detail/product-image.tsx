@@ -18,7 +18,7 @@ export function ProductImage({  alt, className }: ProductImageProps) {
           alt={alt}
           width={500}
           height={500}
-          className=" w-[800px] sm:w-[900px] md:w-[500px]  object-contain "
+          className=" w-[800px] sm:w-[900px] md:w-[400px]  object-contain "
         />
       </CardContent>
     </Card>

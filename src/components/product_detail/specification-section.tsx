@@ -7,7 +7,7 @@ interface SpecificationSectionProps {
 
 export function SpecificationSection({ section }: SpecificationSectionProps) {
   return (
-    <Card className="border-0 shadow-none">
+    <Card className="border-0 shadow-none mt-15">
       <CardHeader>
         <CardTitle className="lg:text-base  px-0 font-semibold text-[#088F8] pb-1 md:pb-2 border-b border-muted/50 mb-0">
           {section.title}
@@ -18,9 +18,9 @@ export function SpecificationSection({ section }: SpecificationSectionProps) {
           {section.items.map((item, index) => (
             <div
               key={index}
-              className="w-full md:w-2/3 flex justify-center py-2"
+              className="w-full  md:w-2/3 flex justify-center py-2"
             >
-              <div className="flex flex-col md:flex-row w-full justify-between items-start md:items-center gap-2">
+              <div className="flex flex-row w-full justify-between items-start md:items-center gap-2">
                 <span className="text-gray-600 text-xs lg:text-sm font-medium md:w-1/2">
                   {item.label}
                 </span>

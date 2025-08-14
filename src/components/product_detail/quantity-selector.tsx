@@ -29,7 +29,7 @@ export function QuantitySelector({
   };
 
   return (
-    <div className="flex items-center border rounded-none">
+    <div className="flex items-center border bg-red-300 rounded-none">
       <Button
         variant="ghost"
         size="sm"

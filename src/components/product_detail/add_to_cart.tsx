@@ -1,8 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Heart } from "lucide-react";
-import { QuantitySelector } from "./quantity-selector";
+import { Heart, ShoppingBag } from "lucide-react";
 
 interface AddToCartSectionProps {
   quantity: number;
@@ -14,27 +13,33 @@ interface AddToCartSectionProps {
 }
 
 export function AddToCartSection({
-  quantity,
-  onQuantityChange,
   onAddToCart,
   onToggleWishlist,
   isInWishlist = false,
 }: AddToCartSectionProps) {
   return (
-    <div className="flex items-center gap-4 flex-wrap">
-      <QuantitySelector
-        quantity={quantity}
-        onQuantityChange={onQuantityChange}
-      />
-
+    <div className="flex items-center gap-2   lg:gap-3 flex-wrap">
       <Button
         onClick={onAddToCart}
-        className="bg-[#088F8F] hover:bg-[#088F8F] text-white px-4 py-7 cursor-pointer rounded-none"
+        className="bg-[#088F8F] hover:bg-[#088F8F] text-white px-2   sm:px-4 py-7 cursor-pointer hidden lg:flex rounded-none"
       >
         Add to Cart
       </Button>
+      <div className="flex  items-center gap-1 lg:hidden">
+        <div
+          onClick={onAddToCart}
+          className={`p-1 lg:p-2 text-[#088F8F] cursor-pointer`}
+        >
+          <ShoppingBag
+            className={`w-8 h-8 md:w-9 md:h-9 cursor-pointer ${
+              isInWishlist ? "fill-current" : ""
+            }`}
+            strokeWidth={1.2}
+          />
+        </div>
+      </div>
 
-      <div className="flex flex-ro items-center gap-1 ">
+      <div className="flex  items-center gap-1 ">
         <div
           onClick={onToggleWishlist}
           className={`p-1 lg:p-2 ${
@@ -42,15 +47,12 @@ export function AddToCartSection({
           } cursor-pointer`}
         >
           <Heart
-            className={`lg:w-12 lg:h-12 cursor-pointer ${
+            className={`w-8 h-8 md:w-9 md:h-9 cursor-pointer ${
               isInWishlist ? "fill-current" : ""
             }`}
             strokeWidth={1.2}
           />
         </div>
-        <span className="text-xs pt-2 md:pt-1 font-medium lg:hidden">
-          Add to Wishlist
-        </span>
       </div>
     </div>
   );

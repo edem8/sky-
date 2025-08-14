@@ -27,12 +27,12 @@ export function ProductInfo({ product }: ProductInfoProps) {
   };
 
   return (
-    <div className="space-y-6 flex  flex-col justify-center">
+    <div className="space-y-5 sm:space-y-6 flex  flex-col     ">
       <div>
-        <h1 className="text-2xl md:text-base lg:text-xl font-bold text-gray-800 mb-3">
+        <h1 className="text-2xl  lg:text-xl font-bold text-gray-800 mb-3">
           {product.name}
           <br />
-          <span className=" text-xl md:text-sm lg:text-lg text-gray-700">
+          <span className=" text-xl  lg:text-lg text-gray-700">
             {product.model}
           </span>
         </h1>
@@ -43,12 +43,6 @@ export function ProductInfo({ product }: ProductInfoProps) {
         />
       </div>
 
-      <PriceDisplay
-        currentPrice={product.price.current}
-        originalPrice={product.price.original}
-        discount={product.price.discount}
-      />
-
       <AddToCartSection
         quantity={quantity}
         onQuantityChange={setQuantity}
@@ -56,6 +50,12 @@ export function ProductInfo({ product }: ProductInfoProps) {
         onToggleWishlist={handleToggleWishlist}
         isInWishlist={isInWishlist}
         wishlistCount={4}
+      />
+
+      <PriceDisplay
+        currentPrice={product.price.current}
+        originalPrice={product.price.original}
+        discount={product.price.discount}
       />
     </div>
   );
