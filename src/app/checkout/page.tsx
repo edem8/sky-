@@ -6,7 +6,7 @@ export default function CheckoutPage() {
     <div className="min-h-screen bg-gray-50 pb-4 pt-10">
       {/* Top notification bar */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b ">
-        <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
+        <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-gray-600">
           Already have an account?
           <span className="text-[#088F8F] underline font-medium cursor-pointer">
             sign in
