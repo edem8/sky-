@@ -11,7 +11,6 @@ export function PriceDisplay({
   currentPrice,
   originalPrice,
   discount,
-  currency = "rub.",
 }: PriceDisplayProps) {
   return (
     <div className="space-y-2 tracking-wider">

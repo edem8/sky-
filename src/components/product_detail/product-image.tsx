@@ -7,7 +7,7 @@ interface ProductImageProps {
   className?: string;
 }
 
-export function ProductImage({ src, alt, className }: ProductImageProps) {
+export function ProductImage({  alt, className }: ProductImageProps) {
   return (
     <Card
       className={`border-0 shadow-none aspect-square md:py-0  relative ${className}`}

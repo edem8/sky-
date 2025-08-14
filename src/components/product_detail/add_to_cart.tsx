@@ -19,10 +19,9 @@ export function AddToCartSection({
   onAddToCart,
   onToggleWishlist,
   isInWishlist = false,
-  wishlistCount = 0,
 }: AddToCartSectionProps) {
   return (
-    <div className="flex items-center  gap-4 flex-wrap">
+    <div className="flex items-center gap-4 flex-wrap">
       <QuantitySelector
         quantity={quantity}
         onQuantityChange={onQuantityChange}
@@ -35,7 +34,7 @@ export function AddToCartSection({
         Add to Cart
       </Button>
 
-      <div className="flex items-center gap-1 ">
+      <div className="flex flex-ro items-center gap-1 ">
         <div
           onClick={onToggleWishlist}
           className={`p-1 lg:p-2 ${
